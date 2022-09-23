@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,77 @@
     <title>Minha página</title>
     <script type="text/javascript" src="/js/jquery-3.6.1.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/bootstrap-5.2.1-dist/css/bootstrap.min.css">
+
+    <style>
+
+        .container {
+            ;margin-top: 200px;
+        }
+
+        #box {
+            border-radius: 5%;
+        }
+
+        .row {
+            margin-top: 20px;
+        }
+
+        .table {
+            margin-left: 40px;
+        }
+
+        .barra-progresso {
+            margin-top: 300px;
+        }
+    </style>
 </head>
+
 <body>
-    <input id="cep">
-    <button type="button" onclick="consultaCep()">Consultar</button>
-    <p id="logradouro"></p>
-    <p id="bairro"></p>
-    <p id="localidade"></p>
-    <p id="uf"></p>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand">Consulta CEP: </a>
+        <div class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="CEP" aria-label="Search" id="cep">
+            <button class="btn btn-outline-success" onclick="consultaCep()">Buscar</button>
+        </div>
+    </nav>
+
+    <div class="container barra-progresso">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                style="width: 100%"></div>
+        </div>
+    </div>
+
+    <div id="box" class="container cep">
+        <div class="row">
+            <h3 id="titulo-cep">Consulte seu CEP.</h3>
+
+        </div>
+        <div class="row">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Logradouro</td>
+                        <td id="logradouro"></td>
+                    </tr>
+                    <tr>
+                        <td>Bairro</td>
+                        <td id="bairro"></td>
+                    </tr>
+                    <tr>
+                        <td>Localidade</td>
+                        <td id="localidade"></td>
+                    </tr>
+                    <tr>
+                        <td>UF</td>
+                        <td id="uf"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
+
 </html>
